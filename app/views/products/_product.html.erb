@@ -12,4 +12,13 @@
       <%= fa_icon "shopping-cart", text: 'Add' %> 
     <% end %>
   </div>
+  <%if product.quantity > 0%>
+    <aside class="price">
+      <%= humanized_money_with_symbol product.price %>
+    </aside>
+  <%else%>
+    <aside class="sold-out">
+      SOLD OUT!
+    </aside>
+  <%end%>  
 </article>
