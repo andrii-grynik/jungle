@@ -1,7 +1,9 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.all.order(created_at: :desc)
+    @products = Product.order(id: :desc).all
+    @prices = []
+    @products.each  {|item| @prices.push(item.price) }
   end
 
   def show
